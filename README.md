@@ -1,5 +1,7 @@
 # Fuel Level
 
+<img width="1280" height="340" alt="1280" src="https://github.com/user-attachments/assets/afa717a9-a2ec-4c5e-aa1a-cf456f7e2125" />
+
 **Fuel Level** は、macOS の空きメモリを自動車の燃料計で表示するメニューバー常駐アプリです。
 1995 年に発表した Classic Mac OS 版 C アプリを、SwiftUI で全面リニューアルしました。
 
