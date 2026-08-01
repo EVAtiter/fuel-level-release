@@ -28,9 +28,6 @@
 
 Plus 版は Developer ID 署名 + Apple 公証済みで配布しています。
 
-> App Store 版のシステムモニターと「画面下端で呼び出す」は **v2.8.0 から**です
-> （現在審査中。公開までは v2.4.1 が配信されます）。
-
 ---
 
 ## ダウンロード（Fuel Level Plus）
@@ -135,9 +132,6 @@ The App Store edition's System Monitor shows **CPU usage over time**, which
 public APIs can provide.
 
 The Plus edition is Developer ID signed and notarized by Apple.
-
-> The System Monitor and Quick Reveal arrive in the App Store edition with
-> **v2.8.0**, currently in review. Until it ships, the store serves v2.4.1.
 
 ## Download (Fuel Level Plus)
 
