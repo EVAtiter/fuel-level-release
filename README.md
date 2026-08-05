@@ -66,19 +66,26 @@ https://apps.apple.com/app/fuel-level/id6786531692
   算術平均の 30℃ ではありません。温度しきい値で警告灯が点灯/点滅します
 - **消費電力計**（Plus 限定）: SoC の消費電力を燃料計スタイルで表示。期間を区切らず
   観測した最大値を 100% とする相対表示で、ピーク更新中は警告灯が点滅します。記憶した
-  ピーク値はメニューの「ピーク記憶をリセット」でいつでもリセットできます
+  ピーク値はメニューの「消費電力ピーク記憶をリセット」でいつでもリセットできます
 - **システムモニター**: 使用状況の推移を、自動車のメーターパネル風のキューブを積み上げた
   横長パネルで表示します（既定は非表示）。
   Plus 版は CPU 使用率（琥珀＝ユーザー、緑＝システム）と消費電力（紫）を重ね、
-  右端に GPU（シアン）と Neural Engine（ピンク）の使用率ゲージを並べます。
+  右端に GPU（シアン）と Neural Engine（ピンク）の使用率ゲージを並べます。ゲージは
+  0 / 50 / 100% にあたる段がオフホワイトになり、目盛りとして読めます。
   App Store 版は CPU 使用率の時系列のみで、そのぶんグラフが横いっぱいに広がります
+- **数値表示**: システムモニターをクリックすると、グラフと数値が入れ替わります。
+  桁の位置が固定された数字で、空きメモリ・メモリープレッシャー・CPU（ユーザーと
+  システムの内訳つき）が読めます。Plus 版ではバッテリー温度・消費電力・GPU /
+  Neural Engine も並びます
 
 ### 見た目・操作
 
 - **スタイル**: コンフォート（下端が欠けた形）／スポーツ（真円）
 - **画面下端で呼び出す**: マウスカーソルを画面の下端にしばらく当てると、ほかのウインドウに
-  隠れている計器がまとめて手前に出てきます（既定はオフ）
-- **ウインドウモード**: 通常 / 最前面 / ウィジェット
+  隠れている計器がまとめて手前に出てきます（既定はオフ）。呼び出している間だけ、
+  システムモニターは選んでいるのと逆の表示（グラフ ⇄ 数値）になります
+- **常に最前面**: 計器をすべてのウインドウより手前に置きます
+- **壁紙に貼り付ける**: 計器を壁紙にピン留めします（クリックは下のウインドウへ抜けます）
 - **照明**: 自動 / Day / Night
 - 日本語 / 英語 UI 対応
 - アプリ自身は外部通信を一切行いません
@@ -174,21 +181,28 @@ https://apps.apple.com/app/fuel-level/id6786531692
 - **Power meter** (Plus only): shows SoC power draw as a car-style fuel gauge,
   relative to the observed maximum (100%), which is remembered indefinitely.
   The warning lamp blinks while a new peak is being set. The remembered peak
-  can be reset anytime from the "Reset Peak Memory" menu item
+  can be reset anytime from the "Reset Power Peak Memory" menu item
 - **System Monitor**: a wide panel that plots usage over time as stacked cubes,
   styled after a car instrument panel (hidden by default).
   The Plus edition overlays CPU usage (amber = user, green = system) with power
   draw (purple), and adds GPU (cyan) and Neural Engine (pink) gauges on the
-  right. The App Store edition plots CPU usage only, so the graph spans the
-  full width
+  right; the rows at 0 / 50 / 100% turn off-white and read as a scale.
+  The App Store edition plots CPU usage only, so the graph spans the full width
+- **Numeric readout**: click the System Monitor to switch between the graph and
+  figures. Fixed-width digits show free memory, memory pressure and CPU (broken
+  down into user and system time); the Plus edition adds battery temperature,
+  power draw and GPU / Neural Engine
 
 ### Look and handling
 
 - **Style**: Comfort (the original flat-bottomed shape) or Sport (a full circle)
 - **Quick Reveal**: rest the pointer at the bottom edge of the screen for a
   moment and any gauges hidden behind other windows come forward together
-  (off by default)
-- **Window modes**: normal / always on top / widget
+  (off by default). While it holds, the System Monitor shows the opposite of
+  what you selected (graph vs. figures)
+- **Always on Top**: keeps the gauges in front of every other window
+- **Pin to Wallpaper**: pins the gauges to the desktop wallpaper (clicks pass
+  through to the window underneath)
 - **Lighting**: auto / Day / Night
 - Japanese / English UI
 - The app never communicates over the network
