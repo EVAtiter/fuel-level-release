@@ -22,7 +22,7 @@
 | 配布 | Mac App Store | 公証済みバイナリ（直接配布）／Homebrew |
 
 バッテリー温度計・消費電力計と、システムモニターの GPU / Neural Engine / 消費電力の
-表示は、非公開 API（バッテリーの内部温度取得 / IOReport）を使用するため App Store 版
+表示は、非公開 API（バッテリーの内部温度取得 / SMC / IOReport）を使用するため App Store 版
 には搭載できません。App Store 版のシステムモニターは、公開 API だけで取得できる
 **CPU 使用率の時系列**として動きます。
 
@@ -64,14 +64,17 @@ https://apps.apple.com/app/fuel-level/id6786531692
   視覚的に有効に表現するためで、目盛りは 10・20・40・80℃ と倍々に並びます。
   針が真上を指すのは 20℃ と 40℃ の幾何学的な中心 √(20×40) ≈ 28.3℃ であり、
   算術平均の 30℃ ではありません。温度しきい値で警告灯が点灯/点滅します
-- **消費電力計**（Plus 限定）: SoC の消費電力を燃料計スタイルで表示。期間を区切らず
+- **消費電力計**（Plus 限定）: Mac 全体の消費電力を燃料計スタイルで表示。期間を区切らず
   観測した最大値を 100% とする相対表示で、ピーク更新中は警告灯が点滅します。記憶した
   ピーク値はメニューの「消費電力ピーク記憶をリセット」でいつでもリセットできます
 - **システムモニター**: 使用状況の推移を、自動車のメーターパネル風のキューブを積み上げた
   横長パネルで表示します（既定は非表示）。
-  Plus 版は CPU 使用率（琥珀＝ユーザー、緑＝システム）と消費電力（紫）を重ね、
+  Plus 版は CPU 使用率（緑＝ユーザー、琥珀＝システム）と消費電力を並べ
+  （重ねる／上下に分ける／中央から伸ばすの 3 通り）、
   右端に GPU（シアン）と Neural Engine（ピンク）の使用率ゲージを並べます。ゲージは
   0 / 50 / 100% にあたる段がオフホワイトになり、目盛りとして読めます。
+  消費電力は、チップ（SoC）の電力を紫、それ以外（画面・SSD・USB 機器・Wi-Fi・メモリなど）を
+  暗い紫に塗り分けます（チップの電力を読めない Mac では紫 1 色）。
   App Store 版は CPU 使用率の時系列のみで、そのぶんグラフが横いっぱいに広がります
 - **数値表示**: システムモニターをクリックすると、グラフと数値が入れ替わります。
   桁の位置が固定された数字で、空きメモリ・メモリープレッシャー・CPU（ユーザーと
@@ -95,7 +98,7 @@ https://apps.apple.com/app/fuel-level/id6786531692
 - macOS 14.0 Sonoma 以降
 - Apple Silicon 専用（Intel Mac 非対応）
 - バッテリー温度計はバッテリー搭載機（ノート型 Mac）のみ表示されます
-- 消費電力計は Apple Silicon（IOReport による SoC 消費電力取得）で表示されます
+- 消費電力計は Apple Silicon（SMC による Mac 全体の消費電力取得）で表示されます
 
 ## プライバシー
 
@@ -134,7 +137,7 @@ Source code is not published here.
 
 The battery thermometer, the power meter, and the GPU / Neural Engine / power
 layers of the System Monitor rely on undocumented APIs (reading the battery's
-internal temperature / IOReport) and cannot be included in the App Store build.
+internal temperature / SMC / IOReport) and cannot be included in the App Store build.
 The App Store edition's System Monitor shows **CPU usage over time**, which
 public APIs can provide.
 
@@ -178,15 +181,19 @@ https://apps.apple.com/app/fuel-level/id6786531692
   10, 20, 40, 80 °C, doubling each step. The needle points straight up at the
   geometric midpoint of 20 and 40 °C — √(20×40) ≈ 28.3 °C — not the arithmetic
   mean of 30 °C. A warning lamp lights/blinks past temperature thresholds
-- **Power meter** (Plus only): shows SoC power draw as a car-style fuel gauge,
+- **Power meter** (Plus only): shows the whole Mac's power draw as a car-style fuel gauge,
   relative to the observed maximum (100%), which is remembered indefinitely.
   The warning lamp blinks while a new peak is being set. The remembered peak
   can be reset anytime from the "Reset Power Peak Memory" menu item
 - **System Monitor**: a wide panel that plots usage over time as stacked cubes,
   styled after a car instrument panel (hidden by default).
-  The Plus edition overlays CPU usage (amber = user, green = system) with power
-  draw (purple), and adds GPU (cyan) and Neural Engine (pink) gauges on the
+  The Plus edition shows CPU usage (green = user, amber = system) together with
+  power draw (three layouts: Overlay, Split or Center), and adds
+  GPU (cyan) and Neural Engine (pink) gauges on the
   right; the rows at 0 / 50 / 100% turn off-white and read as a scale.
+  Power draw is split into the chip (SoC) in purple and everything else (display,
+  SSD, USB devices, Wi-Fi, memory and so on) in dark purple; Macs whose chip power
+  can't be read show a single purple.
   The App Store edition plots CPU usage only, so the graph spans the full width
 - **Numeric readout**: click the System Monitor to switch between the graph and
   figures. Fixed-width digits show free memory, memory pressure and CPU (broken
@@ -212,7 +219,7 @@ https://apps.apple.com/app/fuel-level/id6786531692
 - macOS 14.0 Sonoma or later
 - Apple Silicon only (Intel Macs are not supported)
 - The battery thermometer only appears on Macs with a battery (notebooks)
-- The power meter reads SoC power draw via IOReport (Apple Silicon)
+- The power meter reads the whole Mac's power draw via the SMC (Apple Silicon)
 
 ## Privacy
 
