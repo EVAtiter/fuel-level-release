@@ -17,6 +17,7 @@
 | バッテリー温度計 | ― | ✅ |
 | 消費電力計 | ― | ✅ |
 | システムモニター | ✅ CPU のみ | ✅ CPU + 消費電力 + GPU / Neural Engine |
+| コンビネーション（3 計器を 1 枚にまとめる） | ― | ✅ |
 | 画面下端で呼び出す | ✅ | ✅ |
 | スタイル・照明・ウインドウモード | ✅ | ✅ |
 | 配布 | Mac App Store | 公証済みバイナリ（直接配布）／Homebrew |
@@ -80,6 +81,10 @@ https://apps.apple.com/app/fuel-level/id6786531692
   桁の位置が固定された数字で、空きメモリ・メモリープレッシャー・CPU（ユーザーと
   システムの内訳つき）が読めます。Plus 版ではバッテリー温度・消費電力・GPU /
   Neural Engine も並びます
+- **コンビネーション**（Plus 限定）: 燃料計・温度計・消費電力計を小さくして、1 枚の黒いパネルに
+  まとめて表示します（既定はオフ）。並べ方は横（左から燃料計・温度計・消費電力計）と縦
+  （上から同じ順）から選べます。パネルに並ぶのは、燃料計と、「温度計を表示」「消費電力計を表示」
+  が ON の計器です。オンの間、それぞれの計器のウインドウは表示されません
 
 ### 見た目・操作
 
@@ -131,6 +136,7 @@ Source code is not published here.
 | Battery thermometer | — | ✅ |
 | Power meter | — | ✅ |
 | System Monitor | ✅ CPU only | ✅ CPU + power + GPU / Neural Engine |
+| Combination (three gauges in one panel) | — | ✅ |
 | Quick Reveal | ✅ | ✅ |
 | Style, lighting, window modes | ✅ | ✅ |
 | Distribution | Mac App Store | Notarized binary (direct) / Homebrew |
@@ -199,6 +205,12 @@ https://apps.apple.com/app/fuel-level/id6786531692
   figures. Fixed-width digits show free memory, memory pressure and CPU (broken
   down into user and system time); the Plus edition adds battery temperature,
   power draw and GPU / Neural Engine
+- **Combination** (Plus only): shows the fuel gauge, thermometer and power meter
+  shrunk side by side in a single black panel (off by default). Choose a horizontal
+  layout (fuel, thermometer, power from left to right) or a vertical one (same order
+  from top to bottom). The panel holds the fuel gauge plus whichever of "Show
+  Thermometer" and "Show Power Meter" are on; while it is on, the individual gauge
+  windows are hidden
 
 ### Look and handling
 
