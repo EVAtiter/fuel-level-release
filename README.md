@@ -9,7 +9,6 @@ memory as a car fuel gauge. It's a full SwiftUI rewrite of a Classic Mac OS
 C app originally released in 1995.
 
 This repository is the **distribution and support channel** for Fuel Level.
-Source code is not published here.
 
 ---
 
