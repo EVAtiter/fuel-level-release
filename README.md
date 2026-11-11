@@ -91,8 +91,10 @@ https://apps.apple.com/app/fuel-level/id6786531692
   power draw and GPU / Neural Engine
 - **Combination** (Plus only): shows the fuel gauge, thermometer and power meter
   shrunk side by side in a single black panel (off by default). Choose a horizontal
-  layout (fuel, thermometer, power from left to right) or a vertical one (same order
-  from top to bottom). The panel holds the fuel gauge plus whichever of "Show
+  layout (fuel, thermometer, power from left to right), a vertical one (same order
+  from top to bottom), or Mini Horizontal: a low panel that leaves out the lower part
+  of the gauges, while the ticks, needles and warning lamps stay visible (Comfort style
+  only; choosing it switches the style to Comfort). The panel holds the fuel gauge plus whichever of "Show
   Thermometer" and "Show Power Meter" are on; while it is on, the individual gauge
   windows are hidden
 
