@@ -96,7 +96,8 @@ https://apps.apple.com/app/fuel-level/id6786531692
   of the gauges, while the ticks, needles and warning lamps stay visible (Comfort style
   only; choosing it switches the style to Comfort). The panel holds the fuel gauge plus whichever of "Show
   Thermometer" and "Show Power Meter" are on; while it is on, the individual gauge
-  windows are hidden
+  windows are hidden. Pick a layout from the "Combination" menu to show it, and choose
+  "Off (Separate Gauges)" to go back to separate windows
 
 ### Look and handling
 
